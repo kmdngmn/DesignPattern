@@ -1,0 +1,14 @@
+import javax.swing.*;
+
+public abstract class DisplayDecorator extends Display {
+	
+	DisplayDecorator(Display display, int width, int height) {
+		super(width, height);
+	}
+
+	// abstract?
+	public abstract JPanel create();
+
+	// abstract?
+	public abstract void show();
+}
