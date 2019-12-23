@@ -25,16 +25,16 @@ public class MainWindow extends FrameWindow implements ActionListener {
 	private MyButton returnChangesButton;
 	private MyButton selectBeverageButton;
 
-	private static int balance;	// static 으로 선언
+	private static int balance;	// static 으로 선언 안해도 됨
 
 	/* 스테이트 멤버변수 */
 	private StateInterface stateInterface;
 
-	private StateInterface state_0;
-	private StateInterface state_less_500;
-	private StateInterface state_500;
-	private StateInterface state_less_1000;
-	private StateInterface state_equal_more_1000;
+// 	private StateInterface state_0;
+// 	private StateInterface state_less_500;
+// 	private StateInterface state_500;
+// 	private StateInterface state_less_1000;
+// 	private StateInterface state_equal_more_1000;
 
 	public MainWindow(String title) {
 		super();
@@ -46,12 +46,14 @@ public class MainWindow extends FrameWindow implements ActionListener {
 			}
 		});
 		balance = 0;
-
-		state_0 = new State_0(this);
-		state_less_500 = new State_less_500(this);
-		state_500 = new State_500(this);
-		state_less_1000 = new State_less_1000(this);
-		state_equal_more_1000 = new State_equal_more_1000(this);
+		
+		stateInterface = new State_0(this);
+		
+// 		state_0 = new State_0(this);
+// 		state_less_500 = new State_less_500(this);
+// 		state_500 = new State_500(this);
+// 		state_less_1000 = new State_less_1000(this);
+// 		state_equal_more_1000 = new State_equal_more_1000(this);
 
 	}
 
@@ -124,74 +126,74 @@ public class MainWindow extends FrameWindow implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == hundredButton) {
 			if (balance == 0) {
-				state_0.insert_coin_100();
+				stateInterface.insert_coin_100();
 			} else if (balance > 0 && balance < 500) {
-				state_less_500.insert_coin_100();
+				stateInterface.insert_coin_100();
 			} else if (balance == 500) {
-				state_500.insert_coin_100();
+				stateInterface.insert_coin_100();
 			} else if (balance > 500 && balance < 1000) {
-				state_less_1000.insert_coin_100();
+				stateInterface.insert_coin_100();
 			} else if (balance >= 1000) {
-				state_equal_more_1000.insert_coin_100();
+				stateInterface.insert_coin_100();
 			} else {
 				System.out.println("Invalid situation");
 			}
 
 		} else if (e.getSource() == fiveHundredButton) {
 			if (balance == 0) {
-				state_0.insert_coin_500();
+				stateInterface.insert_coin_500();
 			} else if (balance > 0 && balance < 500) {
-				state_less_500.insert_coin_500();
+				stateInterface.insert_coin_500();
 			} else if (balance == 500) {
-				state_500.insert_coin_500();
+				stateInterface.insert_coin_500();
 			} else if (balance > 500 && balance < 1000) {
-				state_less_1000.insert_coin_500();
+				stateInterface.insert_coin_500();
 			} else if (balance >= 1000) {
-				state_equal_more_1000.insert_coin_500();
+				stateInterface.insert_coin_500();
 			} else {
 				System.out.println("Invalid situation");
 			}
 		} else if (e.getSource() == thousandButton) {
 
 			if (balance == 0) {
-				state_0.insert_coin_1000();
+				stateInterface.insert_coin_1000();
 			} else if (balance > 0 && balance < 500) {
-				state_less_500.insert_coin_1000();
+				stateInterface.insert_coin_1000();
 			} else if (balance == 500) {
-				state_500.insert_coin_1000();
+				stateInterface.insert_coin_1000();
 			} else if (balance > 500 && balance < 1000) {
-				state_less_1000.insert_coin_1000();
+				stateInterface.insert_coin_1000();
 			} else if (balance >= 1000) {
-				state_equal_more_1000.insert_coin_1000();
+				stateInterface.insert_coin_1000();
 			} else {
 				System.out.println("Invalid situation");
 			}
 		} else if (e.getSource() == returnChangesButton) {
 
 			if (balance == 0) {
-				state_0.return_charges();
+				stateInterface.return_charges();
 			} else if (balance > 0 && balance < 500) {
-				state_less_500.return_charges();
+				stateInterface.return_charges();
 			} else if (balance == 500) {
-				state_500.return_charges();
+				stateInterface.return_charges();
 			} else if (balance > 500 && balance < 1000) {
-				state_less_1000.return_charges();
+				stateInterface.return_charges();
 			} else if (balance >= 1000) {
-				state_equal_more_1000.return_charges();
+				stateInterface.return_charges();
 			} else {
 				System.out.println("Invalid situation");
 			}
 		} else if (e.getSource() == selectBeverageButton) {
 			if (balance == 0) {
-				state_0.select_beverages();
+				stateInterface.select_beverages();
 			} else if (balance > 0 && balance < 500) {
-				state_less_500.select_beverages();
+				stateInterface.select_beverages();
 			} else if (balance == 500) {
-				state_500.select_beverages();
+				stateInterface.select_beverages();
 			} else if (balance > 500 && balance < 1000) {
-				state_less_1000.select_beverages();
+				stateInterface.select_beverages();
 			} else if (balance >= 1000) {
-				state_equal_more_1000.select_beverages();
+				stateInterface.select_beverages();
 			} else {
 				System.out.println("Invalid situation");
 			}
